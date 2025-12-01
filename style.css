@@ -1,0 +1,204 @@
+/* Reset léger */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f9f5ff;          /* mauve très pastel pour l’arrière-plan */
+  --card: #ffffff;
+  --text: #1f1b24;
+  --muted: #625f6b;
+  --accent: #c39ae6;      /* mauve pastel pour le prénom */
+  --accent-strong: #a56dd8;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --radius: 18px;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto 64px;
+  padding: 0 20px;
+}
+
+/* Cartes principales */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+/* Bloc titre + photo + texte + bouton (comme sur l’exemple) */
+.header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+h1 span {
+  color: var(--accent);   /* prénom en mauve pastel, sans dégradé */
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 4px auto 16px;
+  border: 4px solid #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.tagline {
+  max-width: 620px;
+  margin: 0 auto 20px;
+  font-size: 15.5px;
+  color: var(--muted);
+}
+
+/* Bouton principal LinkedIn */
+.btn-primary {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: var(--accent-strong);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 20px rgba(165, 109, 216, 0.35);
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.btn-primary:hover {
+  background: #9352c9;
+  box-shadow: 0 12px 24px rgba(147, 82, 201, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 18px rgba(147, 82, 201, 0.35);
+}
+
+/* Centres d’intérêt – empilés (un après l’autre) */
+.interests {
+  margin: 22px 0;
+}
+
+.interest-card {
+  margin-bottom: 16px;
+}
+
+.interest-card h2 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.interest-card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* Footer / Follow me */
+.footer {
+  text-align: center;
+  margin-top: 4px;
+}
+
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+/* Boutons sociaux modernes */
+.socials {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  color: var(--text);
+  transition:
+    transform 0.08s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.social-btn i {
+  font-size: 16px;
+}
+
+/* Couleurs spécifiques pour chaque réseau (subtiles mais modernes) */
+.social-btn[href*="github"] i {
+  /* GitHub juste sobre */
+}
+
+.social-btn[href*="linkedin"] {
+  border-color: rgba(10, 102, 194, 0.2);
+}
+
+.social-btn[href*="linkedin"] i {
+  color: #0a66c2;
+}
+
+.social-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+/* Responsive léger */
+@media (max-width: 480px) {
+  .card {
+    padding: 22px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+  }
+}
